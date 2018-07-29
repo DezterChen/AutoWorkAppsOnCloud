@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#ClickButton").click(function() {
+                $.getJSON("/AutoWorktemp1/query", function(time) {
+                    $('#result').html(time);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+       {{data}}
+    </div>
+
+    <form action="/AutoWorktemp1/query" method="get">
+        <button id="ClickButton" type="button">Generate Button</button>
+        <p>result: <span id='result'></span> s</p>
+    </form>
+</body>
+</html>
